@@ -28,3 +28,52 @@ export default defineConfig(() => ({
   plugins: [vue()],
 }));
 ```
+
+Install the following packages to setup eslint `npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/eslint-config-airbnb @vue/eslint-config-typescript eslint eslint-plugin-import eslint-plugin-vue eslint-plugin-vuejs-accessibility eslint-import-resolver-alias`. After that create `.eslintrc.js` with the following
+
+```js
+module.exports = {
+  root: true,
+  env: {
+    node: true,
+    "vue/setup-compiler-macros": true,
+  },
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  extends: [
+    "plugin:vue/vue3-essential",
+    "@vue/airbnb",
+    "@vue/typescript/recommended",
+  ],
+  settings: {
+    "import/resolver": {
+      alias: {
+        map: [["~", "./src"]],
+      },
+    },
+  },
+  rules: {
+    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "import/prefer-default-export": "off",
+    "vue/script-setup-uses-vars": "error",
+    "no-unused-vars": "off",
+    "import/no-mutable-exports": "off",
+  },
+};
+```
+
+To setup tailwind css install `npm install -D tailwindcss postcss autoprefixer` and run `npx tailwindcss init -p` then update the `tailwind.config.js` file with
+
+```js
+module.exports = {
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
