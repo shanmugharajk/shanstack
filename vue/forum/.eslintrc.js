@@ -13,6 +13,7 @@ module.exports = {
     'import/resolver': {
       alias: {
         map: [['~', './src']],
+        extensions: ['.vue', '.ts'],
       },
     },
   },
