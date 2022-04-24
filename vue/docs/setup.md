@@ -2,6 +2,8 @@
 
 Create a new project using `npm create vite@latest forum -- --template vue-ts`
 
+## Alias setup
+
 To set the alias to import components, update `tsconfig.json`
 
 ```json
@@ -28,6 +30,8 @@ export default defineConfig(() => ({
   plugins: [vue()],
 }));
 ```
+
+## eslint setup
 
 Install the following packages to setup eslint `npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/eslint-config-airbnb @vue/eslint-config-typescript eslint eslint-plugin-import eslint-plugin-vue eslint-plugin-vuejs-accessibility eslint-import-resolver-alias`. After that create `.eslintrc.js` with the following
 
@@ -76,4 +80,28 @@ module.exports = {
   },
   plugins: [],
 };
+```
+
+## editor configuration
+
+create `.editorconfig` and add the following
+
+```
+[*.{js,jsx,ts,tsx,vue}]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+max_line_length = 100
+```
+
+## prettier configuration
+
+create `.prettierrc` and add the following
+
+```json
+{
+  "singleQuote": true
+}
 ```
