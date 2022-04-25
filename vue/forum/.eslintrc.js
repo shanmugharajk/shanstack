@@ -25,5 +25,7 @@ module.exports = {
     'vue/script-setup-uses-vars': 'error',
     'no-unused-vars': 'off',
     'import/no-mutable-exports': 'off',
+    'func-call-spacing': 'off',
+    'no-spaced-func': 'off',
   },
 };
